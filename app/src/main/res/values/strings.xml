@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Camera Lifting</string>
+    <string name="up">升起</string>
+    <string name="down">落下</string>
+    <string name="isMIUI_ture">当前为MIUI系统，强制升起会被系统强制收回</string>
+    <string name="isMIUI_false">当前非MIUI系统，软件可正常使用</string>
+</resources>
