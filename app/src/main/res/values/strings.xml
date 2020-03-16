@@ -4,4 +4,18 @@
     <string name="down">落下</string>
     <string name="isMIUI_ture">当前为MIUI系统，强制升起会被系统强制收回</string>
     <string name="isMIUI_false">当前非MIUI系统，软件可正常使用</string>
+
+    <string name="dialog_title">注意！！！</string>
+    <string name="dialog_msg">现在前置摄像头是弹出状态吗?</string>
+    <string name="dialog_yes">是的</string>
+    <string name="dialog_no">不是</string>
+    <string name="dialog_what">啥意思</string>
+
+    <string name="dialog_title1">警告！！！</string>
+    <string name="dialog_msg1">摄像头收回的状态下如果继续收回会导致步进电机发出异响甚至损坏，再次确定要收回吗？</string>
+    <string name="dialog_yes1">再次确认</string>
+    <string name="dialog_no1">算了</string>
+
+    <string name="check_root_false">获取Root权限失败，请检查是否给予本软件Root权限！</string>
+
 </resources>

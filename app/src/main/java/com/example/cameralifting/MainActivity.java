@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!myutils.checkRoot()) // 检测ROOT
         {
-            Toast.makeText(this, "获取Root权限失败，请检查是否给予本软件Root权限！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.check_root_false, Toast.LENGTH_LONG).show();
 
         }
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void b_up(View view) {
         if (!myutils.checkRoot()) // 检测ROOT
         {
-            Toast.makeText(this, "获取Root权限失败，请检查是否给予本软件Root权限！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.check_root_false, Toast.LENGTH_LONG).show();
 
         }else {
             Shell.SU.run("cp -r " + huancunlujing + "/* /data/local/tmp");
@@ -77,16 +77,16 @@ public class MainActivity extends AppCompatActivity {
     public void b_down(View view) {
         if (!myutils.checkRoot()) // 检测ROOT
         {
-            Toast.makeText(this, "获取Root权限失败，请检查是否给予本软件Root权限！", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.check_root_false, Toast.LENGTH_LONG).show();
 
         } else {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-            alertDialog.setTitle("注意！！！");
-            alertDialog.setMessage("现在前置摄像头是弹出状态吗?");
+            alertDialog.setTitle(R.string.dialog_title);
+            alertDialog.setMessage(R.string.dialog_msg);
             alertDialog.setCancelable(true);
 
 
-            alertDialog.setPositiveButton("是的", new DialogInterface.OnClickListener() {
+            alertDialog.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     down();
@@ -94,13 +94,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            alertDialog.setNegativeButton("不是", new DialogInterface.OnClickListener() {
+            alertDialog.setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                 }
             });
-            alertDialog.setNeutralButton("啥意思", new DialogInterface.OnClickListener() {
+            alertDialog.setNeutralButton(R.string.dialog_what, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     erciqueren();
@@ -122,16 +122,16 @@ public void down()
     Shell.SU.run("rm -f /data/local/tmp/*");
 }
 
-//落下二次确认
+//收回时二次确认
 public void erciqueren()
 {
     AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(MainActivity.this);
-    alertDialog1.setTitle("警告！！！");
-    alertDialog1.setMessage("摄像头收回的状态下如果继续收回会导致步进电机发出异响甚至损坏，再次确定要收回吗？");
+    alertDialog1.setTitle(R.string.dialog_title1);
+    alertDialog1.setMessage(R.string.dialog_msg1);
     alertDialog1.setCancelable(true);
 
 
-    alertDialog1.setPositiveButton("再次确定", new DialogInterface.OnClickListener()
+    alertDialog1.setPositiveButton(R.string.dialog_yes1, new DialogInterface.OnClickListener()
     {
         @Override
         public void onClick(DialogInterface dialog, int which) {
@@ -139,7 +139,7 @@ public void erciqueren()
         }
     });
 
-    alertDialog1.setNegativeButton("算了", new DialogInterface.OnClickListener() {
+    alertDialog1.setNegativeButton(R.string.dialog_no1, new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
             dialog.dismiss();
@@ -155,7 +155,7 @@ public void erciqueren()
             startActivity(intent);
 
     }
-    //设置状态栏沉浸的同时使用下面isLightColor方法使状态栏反色
+    //设置状态栏沉浸的同时使用isLightColor方法使状态栏反色
     public void setStatusBarBgColor(@ColorInt int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // 设置状态栏底色颜色
